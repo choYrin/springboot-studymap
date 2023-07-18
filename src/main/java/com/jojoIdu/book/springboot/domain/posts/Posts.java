@@ -1,23 +1,23 @@
 package com.jojoIdu.book.springboot.domain.posts;
 
-import com.jojoIdu.book.springboot.web.dto.PostsUpdateRequestDto;
+import com.jojoIdu.book.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import javax.transaction.Transactional;
 
 @Getter
 @NoArgsConstructor
 @Entity
-public class Posts {
+public class Posts extends BaseTimeEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(length = 500, nullable = false)
-    private String title;
+    private  String title;
 
     @Column(columnDefinition = "TEXT", nullable = false)
     private String content;
