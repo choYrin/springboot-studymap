@@ -10,8 +10,8 @@ public class HelloController {
     public String Hello(){
         return "hello";
     }
-
-    @GetMapping
+ //w주소 꼭 입력 필요
+    @GetMapping("/yty")
     public HelloResponseDto helloDto(@RequestParam("name") String name, @RequestParam("amount") int amount){
         return new HelloResponseDto(name, amount);
     }
